@@ -1,6 +1,8 @@
 package nate.historicalcontext.characters;
 
-public class CurrentApplications extends Story  {
+import nate.historicalcontext.story.Story;
+
+public class CurrentApplications extends Story {
 
     public CurrentApplications() {
 
