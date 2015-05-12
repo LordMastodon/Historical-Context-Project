@@ -24,7 +24,8 @@ public class GoldilocksConditions extends Story {
 				Thread.sleep(3000);
 				printToConsole("what C++ couldn't. Java came at the perfect time while people were easing into the");
 				Thread.sleep(3000);
-				printToConsole("Internet. ");
+				printToConsole("Internet. It even allowed people to run their programs on every single OS they could think of.");
+				Thread.sleep(3000);
 
 				setStoryFinished(true);
 			}

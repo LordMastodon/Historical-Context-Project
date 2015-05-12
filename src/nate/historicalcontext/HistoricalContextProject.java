@@ -8,13 +8,7 @@ import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import javax.swing.text.DefaultCaret;
 
-import nate.historicalcontext.characters.Backstory;
-import nate.historicalcontext.characters.JamesGosling;
-import nate.historicalcontext.characters.Narrator1;
-import nate.historicalcontext.characters.Narrator2;
-import nate.historicalcontext.characters.Sources;
-import nate.historicalcontext.characters.SunMicrosystems;
-import nate.historicalcontext.characters.TheGreenTeam;
+import nate.historicalcontext.characters.*;
 import nate.historicalcontext.gui.ConsoleJTextArea;
 import nate.historicalcontext.story.*;
 
@@ -111,10 +105,10 @@ public class HistoricalContextProject extends JFrame {
 		UIManager.put("swing.boldMetal", Boolean.FALSE);
 		
 		SwingUtilities.invokeLater(new Runnable() {
-			public void run() {
-				createAndShowGUI();
-			}
-		});
+            public void run() {
+                createAndShowGUI();
+            }
+        });
 		
 		console.append("Hello! This is a text-based game about the creation of Java.");
 		console.printToConsole("Your name is Patrick Naughton.");
@@ -204,6 +198,15 @@ public class HistoricalContextProject extends JFrame {
         Thread.sleep(3000);
         console.printToConsole("[Narrator] would become the most widely used language for the Internet.");
         Thread.sleep(3000);
+
+        currentStory = new GoldilocksConditions();
+        currentStory.executeStory();
+
+        while(!currentStory.getStoryFinished()) {
+            Thread.sleep(10);
+        }
+
+        currentStory = null;
 
         console.setFont(font.deriveFont(Font.BOLD, 20));
         console.printToConsole("GAME END");
